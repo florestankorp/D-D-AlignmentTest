@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <script type="module"
+            src="main.js"></script>
+    <script type="module"
+            src="utils.js"></script>
+    <script type="module"
+            src="chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <title>Alignment Test</title>
+</head>
+
+<body>
+    <h1>Alignment Test</h1>
+    <form name="survey"
+          action="">
+        <div>
+            <p class="question">1. Family elders are expressing disapproval of you to the rest of the family. Do you:
+            </p>
+            <div><input name="q201"
+                       value="1"
+                       type="radio" /><label for="q201">Accept the criticism and change your ways?</label></div>
+            <div><input name="q201"
+                       value="2"
+                       type="radio" /><label for="q201">Seek a compromise with them?</label></div>
+            <div><input name="q201"
+                       value="3"
+                       type="radio" /><label for="q201">Besmirch the reputation of those expressing disapproval as you
+                    ignore theirscorn?</label></div>
+            <div><input name="q201"
+                       value="4"
+                       type="radio" /><label for="q201">Silence them any way you can?</label></div>
+        </div>
+        <div>
+            <p class="question">2. Would you give up a promising career to aid the family in time of need?</p>
+            <div><input name="q202"
+                       value="1"
+                       type="radio" /><label for="q202">In a heartbeat.</label></div>
+            <div><input name="q202"
+                       value="2"
+                       type="radio" /><label for="q202">Yes, with some reluctance.</label></div>
+            <div><input name="q202"
+                       value="3"
+                       type="radio" /><label for="q202">Only if I was certain I'd be able to return to my career
+                    soon.</label></div>
+            <div><input name="q202"
+                       value="4"
+                       type="radio" /><label for="q202">No.</p></label></div>
+        </div>
+        <div>
+            <p class="question">3. Would you betray a family member to advance your own career?</p>
+            <div><input name="q203"
+                       value="1"
+                       type="radio" /><label for="q203">Yes, without a twinge of guilt.</label></div>
+            <div><input name="q203"
+                       value="2"
+                       type="radio" /><label for="q203">Yes, if I could do it secretly.</label></div>
+            <div><input name="q203"
+                       value="3"
+                       type="radio" /><label for="q203">I'd resist the temptation.</label></div>
+            <div><input name="q203"
+                       value="4"
+                       type="radio" /><label for="q203">I find the very idea abhorrent.</p></label></div>
+        </div>
+        <div>
+            <p class="question">4. Do you respect the leaders of your family?</p>
+            <div><input name="q204"
+                       value="1"
+                       type="radio" /><label for="q204">Their words guide my actions.</label></div>
+            <div><input name="q204"
+                       value="2"
+                       type="radio" /><label for="q204">They're role models for me.</label></div>
+            <div><input name="q204"
+                       value="3"
+                       type="radio" /><label for="q204">They're often out of touch with my life.</label></div>
+            <div><input name="q204"
+                       value="4"
+                       type="radio" /><label for="q204">They're out of touch with reality.</p></label></div>
+        </div>
+        <div>
+            <p class="question">5. If your family had arranged your marriage to someone loathsome, would you:</p>
+            <div><input name="q205"
+                       value="1"
+                       type="radio" /><label for="q205">Go through with it, proud to serve your family?</label></div>
+            <div><input name="q205"
+                       value="2"
+                       type="radio" /><label for="q205">Agree, hiding your reluctance?</label></div>
+            <div><input name="q205"
+                       value="3"
+                       type="radio" /><label for="q205">Subtly work against the union?</label></div>
+            <div><input name="q205"
+                       value="4"
+                       type="radio" /><label for="q205">Flee?</p></label></div>
+        </div>
+        <div>
+            <p class="question">6. You're estranged from a family member. On his deathbed, he seeks reconciliation.
+                Doyou:</p>
+            <div><input name="q206"
+                       value="1"
+                       type="radio" /><label for="q206">Speak to him, but hold your ground?</label></div>
+            <div><input name="q206"
+                       value="2"
+                       type="radio" /><label for="q206">Refuse to speak to him?</label></div>
+            <div><input name="q206"
+                       value="3"
+                       type="radio" /><label for="q206">Discuss your estrangement openly and without rancor?</label>
+            </div>
+            <div><input name="q206"
+                       value="4"
+                       type="radio" /><label for="q206">Actively seek reconciliation, and heed his dying words?</p>
+                </label></div>
+        </div>
+        <div>
+            <p class="question">7. A powerful but corrupt judge offers you wealth if you'll testify against your
+                friend.Do you:</p>
+            <div><input name="q207"
+                       value="1"
+                       type="radio" /><label for="q207">Condemn your friend and take the money?</label></div>
+            <div><input name="q207"
+                       value="2"
+                       type="radio" /><label for="q207">Take the money and testify, but try to keep your testimony
+                    ineffective?</label></div>
+            <div><input name="q207"
+                       value="3"
+                       type="radio" /><label for="q207">Refuse the offer and refuse to testify?</label></div>
+            <div><input name="q207"
+                       value="4"
+                       type="radio" /><label for="q207">Testify on your friend's behalf, no matter the consequences?</p>
+                </label></div>
+        </div>
+        <div>
+            <p class="question">8. Do you become close to friends, or hold most people at a safe distance?</p>
+            <div><input name="q208"
+                       value="1"
+                       type="radio" /><label for="q208">I have an abundance of close friends.</label></div>
+            <div><input name="q208"
+                       value="2"
+                       type="radio" /><label for="q208">I have some close friends.</label></div>
+            <div><input name="q208"
+                       value="3"
+                       type="radio" /><label for="q208">I have few close friends.</label></div>
+            <div><input name="q208"
+                       value="4"
+                       type="radio" /><label for="q208">I try to keep people at a distance.</p></label></div>
+        </div>
+        <div>
+            <p class="question">9. Have you ever betrayed a friend?</p>
+            <div><input name="q209"
+                       value="1"
+                       type="radio" /><label for="q209">I've done so more than once, and I sometimes get away with
+                    it.</label></div>
+            <div><input name="q209"
+                       value="2"
+                       type="radio" /><label for="q209">I've done so once.</label></div>
+            <div><input name="q209"
+                       value="3"
+                       type="radio" /><label for="q209">I've been tempted to do so, but I've never gone through with
+                    it.</label></div>
+            <div><input name="q209"
+                       value="4"
+                       type="radio" /><label for="q209">I'd never contemplate such a thing.</p></label></div>
+        </div>
+        <div>
+            <p class="question">10. How do you view lifelong commitment to a single romantic partner?</p>
+            <div><input name="q210"
+                       value="1"
+                       type="radio" /><label for="q210">I have or want such a romance.</label></div>
+            <div><input name="q210"
+                       value="2"
+                       type="radio" /><label for="q210">Such a romance would be ideal--if it's achievable.</label></div>
+            <div><input name="q210"
+                       value="3"
+                       type="radio" /><label for="q210">I worry I'd miss out on what others have to offer.</label></div>
+            <div><input name="q210"
+                       value="4"
+                       type="radio" /><label for="q210">Tie yourself to one person? Huge mistake.</p></label></div>
+        </div>
+        <div>
+            <p class="question">11. Do you insist on repayment when lending money to friends?</p>
+            <div><input name="q211"
+                       value="1"
+                       type="radio" /><label for="q211">Yes, and I write up a contract so there's no
+                    misunderstanding.</label></div>
+            <div><input name="q211"
+                       value="2"
+                       type="radio" /><label for="q211">Yes, but I try to be flexible about the exact terms.</label>
+            </div>
+            <div><input name="q211"
+                       value="3"
+                       type="radio" /><label for="q211">No, although it's sure nice to be repaid.</label></div>
+            <div><input name="q211"
+                       value="4"
+                       type="radio" /><label for="q211">No, they just owe me a favor.</p></label></div>
+        </div>
+        <div>
+            <p class="question">12. Are you still in touch with childhood friends?</p>
+            <div><input name="q212"
+                       value="1"
+                       type="radio" /><label for="q212">Yes, we correspond regularly.</label></div>
+            <div><input name="q212"
+                       value="2"
+                       type="radio" /><label for="q212">Yes, we try to keep in touch.</label></div>
+            <div><input name="q212"
+                       value="3"
+                       type="radio" /><label for="q212">No, I move around too much.</label></div>
+            <div><input name="q212"
+                       value="4"
+                       type="radio" /><label for="q212">No, I don't have anything in common with them anymore.</p>
+                </label></div>
+        </div>
+        <div>
+            <p class="question">13. Do you donate time and money to improve the local community?</p>
+            <div><input name="q213"
+                       value="1"
+                       type="radio" /><label for="q213">Yes, the needs of the community are my top priority.</label>
+            </div>
+            <div><input name="q213"
+                       value="2"
+                       type="radio" /><label for="q213">Yes, I donate as much as I can once my own needs are
+                    met.</label></div>
+            <div><input name="q213"
+                       value="3"
+                       type="radio" /><label for="q213">No, I don't have enough time or money to spare.</label></div>
+            <div><input name="q213"
+                       value="4"
+                       type="radio" /><label for="q213">No, my local community would be a waste of time and money.</p>
+                </label></div>
+        </div>
+        <div>
+            <p class="question">14. Your community is threatened with invasion. Do you:</p>
+            <div><input name="q214"
+                       value="1"
+                       type="radio" /><label for="q214">Help defend it to your last breath?</label></div>
+            <div><input name="q214"
+                       value="2"
+                       type="radio" /><label for="q214">Defend the area with the rest of your community?</label></div>
+            <div><input name="q214"
+                       value="3"
+                       type="radio" /><label for="q214">Flee as soon as things look grim?</label></div>
+            <div><input name="q214"
+                       value="4"
+                       type="radio" /><label for="q214">Cut a deal with the enemy to act as a spy?</p></label></div>
+        </div>
+        <div>
+            <p class="question">15. If you were injured and required immediate assistance, would members of your
+                hometown agree to help?</p>
+            <div><input name="q215"
+                       value="1"
+                       type="radio" /><label for="q215">Yes, because they know I'd do the same for them.</label></div>
+            <div><input name="q215"
+                       value="2"
+                       type="radio" /><label for="q215">Yes, because I'm generally well liked in my home town.</label>
+            </div>
+            <div><input name="q215"
+                       value="3"
+                       type="radio" /><label for="q215">Probably not, because I'm distrusted in my home town.</label>
+            </div>
+            <div><input name="q215"
+                       value="4"
+                       type="radio" /><label for="q215">Definitely not, I've made some enemies in my home town.</p>
+                </label></div>
+        </div>
+        <div>
+            <p class="question">16. Do you respect the laws and authorities of the community?</p>
+            <div><input name="q216"
+                       value="1"
+                       type="radio" /><label for="q216">Yes, without question.</label></div>
+            <div><input name="q216"
+                       value="2"
+                       type="radio" /><label for="q216">Yes, they're generally the best way to govern.</label></div>
+            <div><input name="q216"
+                       value="3"
+                       type="radio" /><label for="q216">When it suits me--there are some laws I just don't agree
+                    with.</label></div>
+            <div><input name="q216"
+                       value="4"
+                       type="radio" /><label for="q216">I don't pay attention to the authorities; they've got no hold on
+                    me.</p></label></div>
+        </div>
+        <div>
+            <p class="question">17. Do members of your home town shun, avoid, or mock you?</p>
+            <div><input name="q217"
+                       value="1"
+                       type="radio" /><label for="q217">Yes, their small minds can't handle anyone outside the
+                    norm.</label></div>
+            <div><input name="q217"
+                       value="2"
+                       type="radio" /><label for="q217">Some do, because I don't always fit in.</label></div>
+            <div><input name="q217"
+                       value="3"
+                       type="radio" /><label for="q217">No, I'm generally seen as normal.</label></div>
+            <div><input name="q217"
+                       value="4"
+                       type="radio" /><label for="q217">No, I set the standard for what is normal in my community.</p>
+                </label></div>
+        </div>
+        <div>
+            <p class="question">18. Would you stand for office or seek to represent the interests of the community
+                insome public manner?</p>
+            <div><input name="q218"
+                       value="1"
+                       type="radio" /><label for="q218">To do so would be an honor I'd joyously accept.</label></div>
+            <div><input name="q218"
+                       value="2"
+                       type="radio" /><label for="q218">Of course. It's everyone's duty to do so.</label></div>
+            <div><input name="q218"
+                       value="3"
+                       type="radio" /><label for="q218">Only if no one else could handle the job.</label></div>
+            <div><input name="q218"
+                       value="4"
+                       type="radio" /><label for="q218">No, I don't want to be responsible for the community's welfare.
+                    </p></label></div>
+        </div>
+        <div>
+            <p class="question">19. Your country is wracked with famine. Would you:</p>
+            <div><input name="q219"
+                       value="1"
+                       type="radio" /><label for="q219">Share what food you had with others?</label></div>
+            <div><input name="q219"
+                       value="2"
+                       type="radio" /><label for="q219">Eat as little as possible yourself, and share the rest?</label>
+            </div>
+            <div><input name="q219"
+                       value="3"
+                       type="radio" /><label for="q219">Steal what food you needed to survive?</label></div>
+            <div><input name="q219"
+                       value="4"
+                       type="radio" /><label for="q219">Steal as much food as possible, then sell it back to the
+                    community at a highprice?</label></div>
+            </p>
+        </div>
+        <div>
+            <p class="question">20. If offered enough money, would you slip a poison into your king's drink?</p>
+            <div><input name="q220"
+                       value="1"
+                       type="radio" /><label for="q220">Yes, I've done similar things before.</label></div>
+            <div><input name="q220"
+                       value="2"
+                       type="radio" /><label for="q220">Yes, if I thought I could get away with it.</label></div>
+            <div><input name="q220"
+                       value="3"
+                       type="radio" /><label for="q220">No, although a vast sum of money would tempt me.</label></div>
+            <div><input name="q220"
+                       value="4"
+                       type="radio" /><label for="q220">No, and I'd warn the king of the plot.</p></label></div>
+        </div>
+        <div>
+            <p class="question">21. A plague is sweeping across your country. Would you:</p>
+            <div><input name="q221"
+                       value="1"
+                       type="radio" /><label for="q221">Undertake a dangerous mission to find the cure?</label></div>
+            <div><input name="q221"
+                       value="2"
+                       type="radio" /><label for="q221">Heal the sick as best you can?</label></div>
+            <div><input name="q221"
+                       value="3"
+                       type="radio" /><label for="q221">Avoid contact with the sick?</label></div>
+            <div><input name="q221"
+                       value="4"
+                       type="radio" /><label for="q221">Flee the country?</p></label></div>
+        </div>
+        <div>
+            <p class="question">22. Do you respect the lawful authority of the rulers of the land?</p>
+            <div><input name="q222"
+                       value="1"
+                       type="radio" /><label for="q222">Yes, Long live the queen!</label></div>
+            <div><input name="q222"
+                       value="2"
+                       type="radio" /><label for="q222">Yes, our rulers are generally fair and just.</label></div>
+            <div><input name="q222"
+                       value="3"
+                       type="radio" /><label for="q222">No, a ruler is no better than anyone else.</label></div>
+            <div><input name="q222"
+                       value="4"
+                       type="radio" /><label for="q222">No, rulers are invariably corrupted by power.</p></label></div>
+        </div>
+        <div>
+            <p class="question">23. If you were offered a reasonably lucrative deal, would you spy for a hostile
+                foreignpower?</p>
+            <div><input name="q223"
+                       value="1"
+                       type="radio" /><label for="q223">Yes, because this nation could stand to be knocked down a
+                    peg.</label></div>
+            <div><input name="q223"
+                       value="2"
+                       type="radio" /><label for="q223">Yes, because the nation's secrets mean little to me.</label>
+            </div>
+            <div><input name="q223"
+                       value="3"
+                       type="radio" /><label for="q223">No, because I might get caught.</label></div>
+            <div><input name="q223"
+                       value="4"
+                       type="radio" /><label for="q223">No, because I'd never violate the trust my nation puts in me.
+                    </p></label></div>
+        </div>
+        <div>
+            <p class="question"> 24. Do you rely on the government to enforce contracts and property rights?</p>
+            <div><input name="q224"
+                       value="1"
+                       type="radio" /><label for="q224">Yes, because maintaining the rule of law is more important than
+                    any individual</label></div>
+            <div><input name="q224"
+                       value="2"
+                       type="radio" /><label for="q224">Yes, because the courts are best equipped to handle such
+                    disputes.</label></div>
+            <div><input name="q224"
+                       value="3"
+                       type="radio" /><label for="q224">Are you kidding me? The government can't even pave
+                    roads.</label></div>
+            <div><input name="q224"
+                       value="4"
+                       type="radio" /><label for="q224">Absolutely not. If I can't defend it myself, I don't deserve to
+                    have it.</p></label></div>
+        </div>
+        <div>
+            <p class="question"> 25. If imprisoned, would you injure or kill others to escape?</p>
+            <div><input name="q225"
+                       value="1"
+                       type="radio" /><label for="q225">Yes. Serves 'em right for locking me up.</label></div>
+            <div><input name="q225"
+                       value="2"
+                       type="radio" /><label for="q225">Yes. They knew the risks when they took the job.</label></div>
+            <div><input name="q225"
+                       value="3"
+                       type="radio" /><label for="q225">No, except for minor wounds that will heal easily.</label></div>
+            <div><input name="q225"
+                       value="4"
+                       type="radio" /><label for="q225">No. Those guards are just doing their jobs.</p></label></div>
+        </div>
+        <div>
+            <p class="question"> 26. Do you accept a noble's right to treat badly the serfs who work on his land?</p>
+            <div><input name="q226"
+                       value="1"
+                       type="radio" /><label for="q226">Yes. They're lucky they're not slaves.</label></div>
+            <div><input name="q226"
+                       value="2"
+                       type="radio" /><label for="q226">Yes, because sometimes only fear will motivate them.</label>
+            </div>
+            <div><input name="q226"
+                       value="3"
+                       type="radio" /><label for="q226">No, nobles should rule as kindly as possible.</label></div>
+            <div><input name="q226"
+                       value="4"
+                       type="radio" /><label for="q226">No one has any "right" to treat another badly. Period.</p>
+                </label></div>
+        </div>
+        <div>
+            <p class="question"> 27. You have accidentally committed a crime. Do you:</p>
+            <div><input name="q227"
+                       value="1"
+                       type="radio" /><label for="q227">Turn yourself in, and attempt to make restitution to the
+                    victim?</label></div>
+            <div><input name="q227"
+                       value="2"
+                       type="radio" /><label for="q227">Turn yourself in, throwing yourself on the mercy of the
+                    court?</label></div>
+            <div><input name="q227"
+                       value="3"
+                       type="radio" /><label for="q227">Hide your involvement, lying if you have to?</label></div>
+            <div><input name="q227"
+                       value="4"
+                       type="radio" /><label for="q227">Try to pin the crime on another?</p></label></div>
+        </div>
+        <div>
+            <p class="question"> 28. If guilty, would you confess to a crime?</p>
+            <div><input name="q228"
+                       value="1"
+                       type="radio" /><label for="q228">Yes, because it is my duty to do so.</label></div>
+            <div><input name="q228"
+                       value="2"
+                       type="radio" /><label for="q228">Yes, because it might get me a lighter sentence.</label></div>
+            <div><input name="q228"
+                       value="3"
+                       type="radio" /><label for="q228">No, I'd make the magistrates prove my guilt.</label></div>
+            <div><input name="q228"
+                       value="4"
+                       type="radio" /><label for="q228">No, and I'd try to "prove" my own innocence.</p></label></div>
+        </div>
+        <div>
+            <p class="question"> 29. Would you express a revolutionary political opinion if threatened with punishment?
+            </p>
+            <div><input name="q229"
+                       value="1"
+                       type="radio" /><label for="q229">Yes, I'd rather be punished than remain silent.</label></div>
+            <div><input name="q229"
+                       value="2"
+                       type="radio" /><label for="q229">Yes. Somebody's got to speak the truth.</label></div>
+            <div><input name="q229"
+                       value="3"
+                       type="radio" /><label for="q229">No, although I might privately express my opinion to
+                    friends.</label></div>
+            <div><input name="q229"
+                       value="4"
+                       type="radio" /><label for="q229">No, politics aren't worth getting worked up about.</p></label>
+            </div>
+        </div>
+        <div>
+            <p class="question"> 30. While traveling, you witness an assault. You are ordered to testify, which
+                willdelay your travel significantly. Do you:</p>
+            <div><input name="q230"
+                       value="1"
+                       type="radio" /><label for="q230">Slip out of town at night to avoid testifying.</label></div>
+            <div><input name="q230"
+                       value="2"
+                       type="radio" /><label for="q230">Deny you saw anything.</label></div>
+            <div><input name="q230"
+                       value="3"
+                       type="radio" /><label for="q230">Remain reluctantly, testify, and leave.</label></div>
+            <div><input name="q230"
+                       value="4"
+                       type="radio" /><label for="q230">Remain until the trial's conclusion in case further testimony is
+                    needed.</p></label></div>
+        </div>
+        <div>
+            <p class="question"> 31. What is the best use of wealth?</p>
+            <div><input name="q231"
+                       value="1"
+                       type="radio" /><label for="q231">To help the destitute and less fortunate.</label></div>
+            <div><input name="q231"
+                       value="2"
+                       type="radio" /><label for="q231">Provide for the needs of friends and family.</label></div>
+            <div><input name="q231"
+                       value="3"
+                       type="radio" /><label for="q231">To stay on top of the heap yourself.</label></div>
+            <div><input name="q231"
+                       value="4"
+                       type="radio" /><label for="q231">To not only stay on top, but keep others from climbing to your
+                    level.</p></label></div>
+        </div>
+        <div>
+            <p class="question"> 32. When confronted by beggars, do you:</p>
+            <div><input name="q232"
+                       value="1"
+                       type="radio" /><label for="q232">Give generously?</label></div>
+            <div><input name="q232"
+                       value="2"
+                       type="radio" /><label for="q232">Give moderately?</label></div>
+            <div><input name="q232"
+                       value="3"
+                       type="radio" /><label for="q232">Give only what you wouldn't miss anyway--a dollar or two at the
+                    most?</label></div>
+            <div><input name="q232"
+                       value="4"
+                       type="radio" /><label for="q232">Ignore them as you walk by?</p></label></div>
+        </div>
+        <div>
+            <p class="question"> 33. By using magic, you could fool village merchants into thinking your copper
+                pieceswere made of gold. Do you?</p>
+            <div><input name="q233"
+                       value="1"
+                       type="radio" /><label for="q233">Yes, and I'll buy as much as I can.</label></div>
+            <div><input name="q233"
+                       value="2"
+                       type="radio" /><label for="q233">Yes, but I'll only cheat the rich merchants.</label></div>
+            <div><input name="q233"
+                       value="3"
+                       type="radio" /><label for="q233">No, it's too risky.</label></div>
+            <div><input name="q233"
+                       value="4"
+                       type="radio" /><label for="q233">No, those merchants have families to feed.</p></label></div>
+        </div>
+        <div>
+            <p class="question"> 34. You have two job offers. One pays more, but the other is secure and steady. Whichdo
+                you choose?</p>
+            <div><input name="q234"
+                       value="1"
+                       type="radio" /><label for="q234">Definitely the lucrative job; steady work sounds like
+                    drudgery.</label></div>
+            <div><input name="q234"
+                       value="2"
+                       type="radio" /><label for="q234">Probably the lucrative job, although I'd look into the secure
+                    job.</label></div>
+            <div><input name="q234"
+                       value="3"
+                       type="radio" /><label for="q234">The secure job, unless the other job was outrageously
+                    lucrative.</label></div>
+            <div><input name="q234"
+                       value="4"
+                       type="radio" /><label for="q234">Definitely the secure job, because I plan for the long term.</p>
+                </label></div>
+        </div>
+        <div>
+            <p class="question"> 35. What's the best path to wealth?</p>
+            <div><input name="q235"
+                       value="1"
+                       type="radio" /><label for="q235">It's a matter of luck and being in the right place at the right
+                    time.</label></div>
+            <div><input name="q235"
+                       value="2"
+                       type="radio" /><label for="q235">Staying flexible so you can take advantage of good
+                    opportunities.</label></div>
+            <div><input name="q235"
+                       value="3"
+                       type="radio" /><label for="q235">Following a long-term plan that incorporates a comfortable level
+                    of risk.</label></div>
+            <div><input name="q235"
+                       value="4"
+                       type="radio" /><label for="q235">Hard work and perseverance.</p></label></div>
+        </div>
+        <div>
+            <p class="question"> 36. If you accepted a job or contract, would you try to finish the task even if it
+                gotmuch more dangerous?</p>
+            <div><input name="q236"
+                       value="1"
+                       type="radio" /><label for="q236">Yes, my word is my bond.</label></div>
+            <div><input name="q236"
+                       value="2"
+                       type="radio" /><label for="q236">Yes, because it's good to have a reputation for
+                    dependability.</label></div>
+            <div><input name="q236"
+                       value="3"
+                       type="radio" /><label for="q236">You can bet I'd be renegotiating.</label></div>
+            <div><input name="q236"
+                       value="4"
+                       type="radio" /><label for="q236">If it's no longer a good deal, then the deal is off.</p></label>
+            </div>
+        </div>
+    </form>
+    <div class="result">
+    </div>
+    <div>
+        <input class="toggle-button"
+               value="What is my alignment?"
+               onclick="process();"
+               type="button">
+    </div>
+</body>
+
+</html>
