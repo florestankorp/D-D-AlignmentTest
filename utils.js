@@ -21,18 +21,14 @@ let tie = -1;
 let align = '';
 
 export function displayResult() {
-  const { alignments, alignmentParts } = JSON.parse(
-    sessionStorage.getItem(SESSION_STORAGE_KEY)
-  );
-
   overviewEl.innerHTML = RESULTS;
   resultEl.innerHTML = '';
   resultEl.appendChild(headingEl);
   resultEl.appendChild(paragraphEl);
   resultEl.appendChild(overviewEl);
-
-  headingEl.innerHTML = HEADING_KEYS[align];
+  headingEl.innerHTML = `<span class="font-weight-light">Result:</span> ${HEADING_KEYS[align]}`;
   paragraphEl.innerHTML = PARAGRAPH_KEYS[align];
+
   loadGraph();
 }
 
@@ -119,7 +115,10 @@ export function updateScore(question, alignmentOne, alignmentTwo) {
 
   sessionStorage.setItem(
     SESSION_STORAGE_KEY,
-    JSON.stringify({ alignments, alignmentParts: newAlignmentParts })
+    JSON.stringify({
+      alignmentParts: newAlignmentParts ? newAlignmentParts : alignmentParts,
+      alignments,
+    })
   );
 }
 

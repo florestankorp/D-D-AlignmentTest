@@ -58,23 +58,18 @@ export const PARAGRAPH_KEYS = {
 };
 
 export const RESULTS = `
-<h2>Detailed Results:</h2>
-<div>
-    <h3>Alignment:</h3>
-    <canvas id="alignment"
-    width="400"
-    height="400"></canvas> 
-</div>
-<div>
-    <h3>Law & Chaos:</h3>
-    <canvas id="law-chaos"
-    width="400"
-    height="400"></canvas> 
-</div>
-<div>
-    <h3>Good & Evil</h3>
-    <canvas id="good-evil"
-    width="400"
-    height="400"></canvas> 
+<div class="graph-container">
+  <div>
+      <h3>Alignment:</h3>
+      <canvas width="250%" height="310%" id="alignment"></canvas> 
+  </div>
+  <div>
+      <h3>Law & Chaos:</h3>
+      <canvas width="250%" height="310%" id="law-chaos"></canvas> 
+  </div>
+  <div>
+      <h3>Good & Evil</h3>
+      <canvas width="250%" height="310%" id="good-evil"></canvas> 
+  </div>
 </div>
 `;

@@ -63,9 +63,7 @@ export function loadGraph() {
         },
       ],
     },
-    options: {
-      legend: { align: 'start', position: 'right' },
-    },
+    options: { aspectRatio: 1, legend: { display: false } },
   });
 
   const lawChaosChart = new Chart(lawChaosCtx, {
@@ -90,9 +88,7 @@ export function loadGraph() {
         },
       ],
     },
-    options: {
-      legend: { align: 'start', position: 'right' },
-    },
+    options: { aspectRatio: 1, legend: { display: false } },
   });
 
   const goodEvilChart = new Chart(goodEvilCtx, {
@@ -117,8 +113,6 @@ export function loadGraph() {
         },
       ],
     },
-    options: {
-      legend: { align: 'start', position: 'right' },
-    },
+    options: { aspectRatio: 1, legend: { display: false } },
   });
 }

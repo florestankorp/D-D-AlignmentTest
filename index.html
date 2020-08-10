@@ -12,13 +12,16 @@
     <script type="module"
             src="chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <link rel="stylesheet"
+          href="style.css">
     <title>Alignment Test</title>
 </head>
 
 <body>
-    <h1>Alignment Test</h1>
     <form name="survey"
           action="">
+        <h1>Alignment Test</h1>
+
         <div>
             <p class="question">1. Family elders are expressing disapproval of you to the rest of the family. Do you:
             </p>
@@ -623,7 +626,7 @@
     </form>
     <div class="result">
     </div>
-    <div>
+    <div class="toggle-button-container">
         <input class="toggle-button"
                value="What is my alignment?"
                onclick="process();"
